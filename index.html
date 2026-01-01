@@ -1,12 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testly</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -22,160 +21,277 @@
         <p>Resize your window to view the content properly</p>
         <p>If you are using a mobile device, please use a desktop device</p>
     </div>
-    <nav class="highlight" style="--r: 30px">
-        <div style="display: flex; align-items: center; width: 100%">
-            <h1 style="
-            position: relative;
-            left: 0;
-            margin: 0;
-            padding: 0;
-            font-size: 24pt;
-          ">
-                Testly
-            </h1>
-            <button style="position: absolute; right: 10px; top: 10px; --r: 20px" class="icon secondary highlight">
+    <div class="gradient"></div>
+    <div class="titleholder">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="title card highlight">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+                    <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+                    <path d="M10 9H8" />
+                    <path d="M16 13H8" />
+                    <path d="M16 17H8" />
+                </svg><span id="testname"></span>
+            </div>
+            <div class="card highlight" style="padding: 0; gap: 0;">
+                <button onclick="subPressed(this, 'Physics')" id="phybutton" class="title"
+                    style="background: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 6.528V3a1 1 0 0 1 1-1h0" />
+                        <path
+                            d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21" />
+                    </svg> <span> Physics</span>
+                </button>
+                <button onclick="subPressed(this, 'Chemistry')" id="chebutton" class="title"
+                    style="background: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2" />
+                        <path d="M6.453 15h11.094" />
+                        <path d="M8.5 2h7" />
+                    </svg> <span>Chemistry</span>
+                </button>
+                <button onclick="subPressed(this, 'Biology')" id="biobutton" class="title"
+                    style="background: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                    </svg> <span>Biology</span>
+                </button>
+                <button onclick="subPressed(this, 'Mathematics')" id="mathbutton" class="title"
+                    style="background: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21" />
+                    </svg> <span>Mathematics</span>
+                </button>
+                <button onclick="subPressed(this, 'Mental Ability')" id="matbutton" class="title"
+                    style="background: none; box-shadow: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 18V5" />
+                        <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+                        <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+                        <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+                        <path d="M18 18a4 4 0 0 0 2-7.464" />
+                        <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+                        <path d="M6 18a4 4 0 0 1-2-7.464" />
+                        <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+                    </svg> <span>Mental Ability</span>
+                </button>
+            </div>
+            <div class="input-div highlight" style="width: fit-content;">
+                <label for="rollno" style="margin-left: 20px">Roll No.</label>
+                <input type="number" name="rollno" id="rollno" style="width: 60px;">
+            </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="icon highlight secondary" onclick="toggleTheme()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-ellipsis-icon lucide-ellipsis">
-                    <circle cx="12" cy="12" r="1" />
-                    <circle cx="19" cy="12" r="1" />
-                    <circle cx="5" cy="12" r="1" />
+                    class="lucide lucide-moon-icon lucide-moon">
+                    <path
+                        d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-sun-icon lucide-sun">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2" />
+                    <path d="M12 20v2" />
+                    <path d="m4.93 4.93 1.41 1.41" />
+                    <path d="m17.66 17.66 1.41 1.41" />
+                    <path d="M2 12h2" />
+                    <path d="M20 12h2" />
+                    <path d="m6.34 17.66-1.41 1.41" />
+                    <path d="m19.07 4.93-1.41 1.41" />
                 </svg>
             </button>
-        </div>
-        <div class="nav-items">
-            <div class="highlight input-div" style="--r: 20px">
-                <input type="text" name="search" id="search-input" placeholder="Search" />
+            <div class="card highlight" style="padding: 0; gap: 0;">
+                <button class="icon null" id="kahootlayout" onclick="kahootlayoutPressed()">
+                    <svg id="kahootlayouticon" width="17" height="15" viewBox="0 0 17 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="16" height="13.5714" rx="1.5" stroke="currentColor" />
+                        <path d="M2.0238 2.42859H8.49999" stroke="currentColor" stroke-linecap="round" />
+                        <path d="M2.0238 4.04761H6.07142" stroke="currentColor" stroke-linecap="round" />
+                        <rect x="2.11902" y="6.9762" width="3.04762" height="5.47619" rx="0.5" stroke="currentColor" />
+                        <rect x="11.8333" y="6.9762" width="3.04762" height="5.47619" rx="0.5" stroke="currentColor" />
+                        <rect x="6.9762" y="6.9762" width="3.04762" height="5.47619" rx="0.5" stroke="currentColor" />
+                    </svg></button>
+                <button class="icon null" id="gformslayout" onclick="gformslayoutPressed()">
+                    <svg id="gformslayouticon" width="12" height="15" viewBox="0 0 12 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="11" height="14" rx="1.5" stroke="currentColor" />
+                        <path d="M2.0238 2.42859H8.49999" stroke="currentColor" stroke-linecap="round" />
+                        <path d="M2.0238 4.04761H6.07142" stroke="currentColor" stroke-linecap="round" />
+                        <path d="M5 7H9.04762" stroke="currentColor" stroke-linecap="round" />
+                        <path d="M5 9.5H9.04762" stroke="currentColor" stroke-linecap="round" />
+                        <path d="M5 12H9.04762" stroke="currentColor" stroke-linecap="round" />
+                        <rect x="2.25" y="6.25" width="1.5" height="1.5" rx="0.75" stroke="currentColor"
+                            stroke-width="0.5" />
+                        <rect x="2.25" y="8.75" width="1.5" height="1.5" rx="0.75" stroke="currentColor"
+                            stroke-width="0.5" />
+                        <rect x="2.25" y="11.25" width="1.5" height="1.5" rx="0.75" stroke="currentColor"
+                            stroke-width="0.5" />
+                    </svg>
+                </button>
             </div>
-            <ul>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-house-icon lucide-house">
-                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-                        <path
-                            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    </svg>
-                    ‎ Home
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-square-pen-icon lucide-square-pen">
-                        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                        <path
-                            d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-                    </svg>
-                    ‎ Tests
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-chart-line-icon lucide-chart-line">
-                        <path d="M3 3v16a2 2 0 0 0 2 2h16" />
-                        <path d="m19 9-5 5-4-4-3 3" />
-                    </svg>
-                    ‎ Results
-                </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-users-round-icon lucide-users-round">
-                        <path d="M18 21a8 8 0 0 0-16 0" />
-                        <circle cx="10" cy="8" r="5" />
-                        <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
-                    </svg>
-                    ‎ Team
-                </li>
-
-            </ul>
-            <div class="active-layer highlight" style="--r: 20px;"></div>
         </div>
-    </nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const activeLayer = document.querySelector('.active-layer');
-            const navItems = document.querySelectorAll('nav ul li');
+    </div>
+    <div class="content" style="z-index: -2;">
+        <div id="kahootframe" style="width: 100%; height: 100%; border: none; display: none;">
+            <span style="font-size: 24pt;" class="kahootQuestion"></span>
+            <CENTER>
+                <div class="kahoot-options">
+                    <div class="card highlight" style="width: 25%; height: 100%; border-radius: 30px; --r: 30px;">
+                        <button class="icon secondary highlight option-button" onclick="selectOption(this, 'o1')"
+                            style="z-index: 1; position: absolute; top: 10px; left: 10px;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg></button> <span class="o1"></span>
+                    </div>
+                    <div class="card highlight" style="width: 25%;height: 100%; border-radius: 30px; --r: 30px;"><button
+                            class="icon secondary highlight option-button" onclick="selectOption(this, 'o2')"
+                            style="z-index: 1; position: absolute; top: 10px; left: 10px;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg></button> <span class="o2"></span></div>
+                    <div class="card highlight" style="width: 25%;height: 100%; border-radius: 30px; --r: 30px;"><button
+                            class="icon secondary highlight option-button" onclick="selectOption(this, 'o3')"
+                            style="z-index: 1; position: absolute; top: 10px; left: 10px;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg></button> <span class="o3"></span></div>
+                    <div class="card highlight" style="width: 25%;height: 100%; border-radius: 30px; --r: 30px;"><button
+                            class="icon secondary highlight option-button" onclick="selectOption(this, 'o4')"
+                            style="z-index: 1; position: absolute; top: 10px; left: 10px;"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg></button> <span class="o4"></span></div>
+                </div>
+            </CENTER>
+        </div>
+        <div id="gformsframe" style="width: 100%; height: 100%; border: none; display: none;">
+            <CENTER>
+                <div class="card highlight"
+                    style="width: 500px; height: fit-content; padding: 10px; --r: 50px; border-radius: 50px; flex-direction: column-reverse; justify-content:flex-start">
+                    <span class="gformsQuestion"></span>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div class="options" style="width: 100%;">
+                        <div class="card highlight"
+                            style="margin: 10px; border-radius: 30px; --r: 30px; width: calc(100% - 40px); justify-content: left; align-items: left;">
+                            <button class="secondary highlight option-button"
+                                style="padding-left: 20px; padding-right: 20px;" onclick="selectOption(this, 'o1')"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg></button><span class="o1" style="cursor: pointer;"></span>
+                        </div>
+                        <div class="card highlight"
+                            style="margin: 10px; border-radius: 30px; --r: 30px; width: calc(100% - 40px); justify-content: left; align-items: left;">
+                            <button class="secondary highlight option-button"
+                                style="padding-left: 20px; padding-right: 20px;" onclick="selectOption(this, 'o2')"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg></button><span class="o2" style="cursor: pointer;"></span>
+                        </div>
+                        <div class="card highlight"
+                            style="margin: 10px; border-radius: 30px; --r: 30px; width: calc(100% - 40px); justify-content: left; align-items: left;">
+                            <button class="secondary highlight option-button"
+                                style="padding-left: 20px; padding-right: 20px;" onclick="selectOption(this, 'o3')"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg></button><span class="o3" style="cursor: pointer;"></span>
+                        </div>
+                        <div class="card highlight"
+                            style="margin: 10px; border-radius: 30px; --r: 30px; width: calc(100% - 40px); justify-content: left; align-items: left;">
+                            <button class="secondary highlight option-button"
+                                style="padding-left: 20px; padding-right: 20px;" onclick="selectOption(this, 'o4')"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check-icon lucide-check">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg></button><span class="o4" style="cursor: pointer;"></span>
+                        </div>
+                    </div>
 
-            // Function to update active layer position and size
-            function updateActiveLayer(element) {
-                // Remove any existing active class
-                navItems.forEach(item => item.classList.remove('active'));
+                    <script>
+                        function selectOption(button, option) {
+                            const isAlreadySelected = button.classList.contains('primary');
 
-                // Add active class to clicked item
-                element.classList.add('active');
+                            // If clicking the already selected option, deselect it
+                            if (isAlreadySelected) {
+                                button.classList.remove('primary');
+                                console.log('Deselected option');
+                                return;
+                            }
 
-                // Get the position and size of the element
-                const rect = element.getBoundingClientRect();
-                const navRect = document.querySelector('nav').getBoundingClientRect();
+                            // Remove 'primary' class from all option buttons in the current question
+                            const allOptionButtons = button.closest('.content').querySelectorAll('.option-button');
+                            allOptionButtons.forEach(btn => {
+                                btn.classList.remove('primary');
+                            });
 
-                // Position the active layer
-                activeLayer.style.width = `${rect.width}px`;
-                activeLayer.style.height = `${rect.height}px`;
-                activeLayer.style.opacity = '1';
+                            // Select the clicked option
+                            button.classList.add('primary');
 
-                // Calculate position relative to the viewport
-                activeLayer.style.transform = `translate(${rect.left - navRect.left}px, ${rect.top - navRect.top}px)`;
-            }
+                            // Store the selected answer (optional)
+                            const questionCard = button.closest('.card');
+                            const questionText = questionCard.querySelector('.question-text')?.textContent || 'Unknown question';
+                            const selectedOption = button.nextElementSibling.textContent;
 
-            // Set initial active item (first one by default)
-            if (navItems.length > 0) {
-                navItems[0].classList.add('active');
-                updateActiveLayer(navItems[0]);
-            }
+                            console.log('Selected answer:', {
+                                question: questionText,
+                                answer: selectedOption
+                            });
+                        }
 
-            // Add click event listeners to all nav items
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    // Remove active class from all items
-                    navItems.forEach(i => i.classList.remove('active'));
-                    // Add active class to clicked item
-                    item.classList.add('active');
-                    // Update active layer position
-                    updateActiveLayer(item);
-                });
-            });
-
-            // Update on window resize
-            window.addEventListener('resize', () => {
-                const activeItem = document.querySelector('nav ul li.active');
-                if (activeItem) {
-                    updateActiveLayer(activeItem);
-                }
-            });
-        });
-        const resizeWarning = document.querySelector('.resize-warning');
-        let resizeTimeout;
-
-        function showResizeWarning(show) {
-            if (show) {
-                resizeWarning.style.display = 'flex';
-                // Trigger reflow
-                void resizeWarning.offsetWidth;
-                resizeWarning.classList.add('show');
-            } else {
-                resizeWarning.classList.remove('show');
-                // Wait for the fade-out animation to complete before hiding
-                setTimeout(() => {
-                    if (!resizeWarning.classList.contains('show')) {
-                        resizeWarning.style.display = 'none';
-                    }
-                }, 300); // Match this with the CSS transition duration
-            }
-        }
-
-        function checkWindowSize() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                showResizeWarning(window.innerWidth < 600);
-            }, 25); // Small debounce to prevent rapid toggling during resize
-        }
-        // Initial check
-        checkWindowSize();
-
-        // Add event listener for window resize
-        window.addEventListener('resize', checkWindowSize);
-    </script>
+                        // Make option text clickable
+                        document.addEventListener('DOMContentLoaded', () => {
+                            document.querySelectorAll('.o1, .o2, .o3, .o4').forEach(span => {
+                                span.addEventListener('click', (e) => {
+                                    // Find the closest parent card and its corresponding button
+                                    const card = e.target.closest('.card');
+                                    const button = card?.querySelector('button');
+                                    if (button) {
+                                        // Extract the option number from the span's class
+                                        const option = Array.from(e.target.classList)
+                                            .find(cls => cls.startsWith('o'));
+                                        if (option) {
+                                            selectOption(button, option);
+                                        }
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                </div>
+            </CENTER>
+        </div>
+    </div>
 </body>
+<script src="script.js"></script>
 
 </html>
