@@ -1,0 +1,30 @@
+{
+    "subjectName": "Chemistry",
+    "questions": {
+        "6": {
+            "question": "What is the speed of light in vacuum",
+            "options": ["3 x 10^8 m/s", "343 m/s", "1500 m/s", "300,000 km/s"],
+            "correctAnswer": 0
+        },
+        "7": {
+            "question": "What is the SI unit of Pressure?",
+            "options": ["Newton", "Joule", "Watt", "Pascal"],
+            "correctAnswer": 3
+        },
+        "8": {
+            "question": "What is the chemical symbol for gold?",
+            "options": ["Go", "Gd", "Au", "Ag"],
+            "correctAnswer": 2
+        },
+        "9": {
+            "question": "What is the graph for y = x^2?",
+            "options": ["<image src=\"../assets/s2q9o1.png\">", "<image src=\"../assets/s2q9o2.png\">", "<image src=\"../assets/s2q9o3.png\">", "<image src=\"../assets/s2q9o4.png\">"],
+            "correctAnswer": 1
+        },
+        "10": {
+            "question": "What is the derivative of x^2?",
+            "options": ["2x", "x^2", "2", "x"],
+            "correctAnswer": 0
+        }
+    }
+}
