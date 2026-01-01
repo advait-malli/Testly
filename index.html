@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testly</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="resize-warning">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-maximize2-icon lucide-maximize-2" style="width: 200px; height: 200px;">
+            <path d="M15 3h6v6" />
+            <path d="m21 3-7 7" />
+            <path d="m3 21 7-7" />
+            <path d="M9 21H3v-6" />
+        </svg>
+        <p>Resize your window to view the content properly</p>
+        <p>If you are using a mobile device, please use a desktop device</p>
+    </div>
+    <nav class="highlight" style="--r: 30px">
+        <div style="display: flex; align-items: center; width: 100%">
+            <h1 style="
+            position: relative;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 24pt;
+          ">
+                Testly
+            </h1>
+            <button style="position: absolute; right: 10px; top: 10px; --r: 20px" class="icon secondary highlight">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-ellipsis-icon lucide-ellipsis">
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="19" cy="12" r="1" />
+                    <circle cx="5" cy="12" r="1" />
+                </svg>
+            </button>
+        </div>
+        <div class="nav-items">
+            <div class="highlight input-div" style="--r: 20px">
+                <input type="text" name="search" id="search-input" placeholder="Search" />
+            </div>
+            <ul>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-house-icon lucide-house">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                        <path
+                            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    ‎ Home
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-square-pen-icon lucide-square-pen">
+                        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                        <path
+                            d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
+                    </svg>
+                    ‎ Tests
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chart-line-icon lucide-chart-line">
+                        <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+                        <path d="m19 9-5 5-4-4-3 3" />
+                    </svg>
+                    ‎ Results
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-users-round-icon lucide-users-round">
+                        <path d="M18 21a8 8 0 0 0-16 0" />
+                        <circle cx="10" cy="8" r="5" />
+                        <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
+                    </svg>
+                    ‎ Team
+                </li>
+
+            </ul>
+            <div class="active-layer highlight" style="--r: 20px;"></div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const activeLayer = document.querySelector('.active-layer');
+            const navItems = document.querySelectorAll('nav ul li');
+
+            // Function to update active layer position and size
+            function updateActiveLayer(element) {
+                // Remove any existing active class
+                navItems.forEach(item => item.classList.remove('active'));
+
+                // Add active class to clicked item
+                element.classList.add('active');
+
+                // Get the position and size of the element
+                const rect = element.getBoundingClientRect();
+                const navRect = document.querySelector('nav').getBoundingClientRect();
+
+                // Position the active layer
+                activeLayer.style.width = `${rect.width}px`;
+                activeLayer.style.height = `${rect.height}px`;
+                activeLayer.style.opacity = '1';
+
+                // Calculate position relative to the viewport
+                activeLayer.style.transform = `translate(${rect.left - navRect.left}px, ${rect.top - navRect.top}px)`;
+            }
+
+            // Set initial active item (first one by default)
+            if (navItems.length > 0) {
+                navItems[0].classList.add('active');
+                updateActiveLayer(navItems[0]);
+            }
+
+            // Add click event listeners to all nav items
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Remove active class from all items
+                    navItems.forEach(i => i.classList.remove('active'));
+                    // Add active class to clicked item
+                    item.classList.add('active');
+                    // Update active layer position
+                    updateActiveLayer(item);
+                });
+            });
+
+            // Update on window resize
+            window.addEventListener('resize', () => {
+                const activeItem = document.querySelector('nav ul li.active');
+                if (activeItem) {
+                    updateActiveLayer(activeItem);
+                }
+            });
+        });
+        const resizeWarning = document.querySelector('.resize-warning');
+        let resizeTimeout;
+
+        function showResizeWarning(show) {
+            if (show) {
+                resizeWarning.style.display = 'flex';
+                // Trigger reflow
+                void resizeWarning.offsetWidth;
+                resizeWarning.classList.add('show');
+            } else {
+                resizeWarning.classList.remove('show');
+                // Wait for the fade-out animation to complete before hiding
+                setTimeout(() => {
+                    if (!resizeWarning.classList.contains('show')) {
+                        resizeWarning.style.display = 'none';
+                    }
+                }, 300); // Match this with the CSS transition duration
+            }
+        }
+
+        function checkWindowSize() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                showResizeWarning(window.innerWidth < 600);
+            }, 25); // Small debounce to prevent rapid toggling during resize
+        }
+        // Initial check
+        checkWindowSize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', checkWindowSize);
+    </script>
+</body>
+
+</html>
